@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import "./App.css";
 import { setupExperiment3 } from "./exp3";
+import { setupExperiment4 } from "./exp4";
+import "./App.css";
 
 function App() {
   useEffect(() => {
     setupExperiment3();
+    setupExperiment4();
   }, []);
 
   return (
@@ -17,13 +19,12 @@ function App() {
           <a href="#home">Home</a>
           <a href="#features">Features</a>
           <a href="#about">About</a>
+          <a href="#todo">To-Do</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
-      {/* MAIN CONTENT */}
       <main>
-
         {/* HERO SECTION */}
         <section className="hero" id="home">
           <p className="small-heading">
@@ -61,10 +62,8 @@ function App() {
           <h2>Everything Campus, In One Place</h2>
 
           <div className="card-container">
-
             <article className="feature-card">
               <h3>Campus Events</h3>
-
               <p>
                 Discover workshops, fests, clubs and activities
                 happening around campus.
@@ -73,7 +72,6 @@ function App() {
 
             <article className="feature-card">
               <h3>Student Community</h3>
-
               <p>
                 Connect with students and build a strong
                 campus community.
@@ -82,17 +80,15 @@ function App() {
 
             <article className="feature-card">
               <h3>Academic Resources</h3>
-
               <p>
                 Find useful academic resources and stay updated
                 with important information.
               </p>
             </article>
-
           </div>
         </section>
 
-        {/* EXPERIMENT 3 INTERACTIVE SECTION */}
+        {/* EXPERIMENT 3 */}
         <section
           className="interactive-section"
           id="about"
@@ -105,12 +101,10 @@ function App() {
 
           <p>
             This section demonstrates DOM manipulation,
-            events and dynamic content using JavaScript.
+            events and dynamic content.
           </p>
 
-          {/* TEXT INPUT */}
           <div className="interaction-box">
-
             <h3>1. Enter Your Name</h3>
 
             <input
@@ -122,12 +116,9 @@ function App() {
             <p id="liveMessage">
               Start typing your name...
             </p>
-
           </div>
 
-          {/* KEYBOARD EVENT */}
           <div className="interaction-box">
-
             <h3>2. Add a Campus Announcement</h3>
 
             <p>
@@ -142,9 +133,41 @@ function App() {
             />
 
             <div id="announcementList"></div>
-
           </div>
+        </section>
 
+        {/* EXPERIMENT 4 */}
+        <section
+          className="todo-section"
+          id="todo"
+        >
+          <h2>Campus To-Do List</h2>
+
+          <p>
+            This application demonstrates state handling
+            and dynamic UI updates.
+          </p>
+
+          <div className="todo-box">
+            <div className="todo-input">
+              <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a campus task..."
+              />
+
+              <button
+                id="addTaskButton"
+                className="primary-button"
+              >
+                Add Task
+              </button>
+            </div>
+
+            <h3>Your Tasks</h3>
+
+            <div id="taskList"></div>
+          </div>
         </section>
 
         {/* CONTACT SECTION */}
@@ -159,7 +182,6 @@ function App() {
             explore and participate in campus life.
           </p>
         </section>
-
       </main>
 
       {/* FOOTER */}
@@ -168,7 +190,6 @@ function App() {
           © 2026 Campus Connect. All rights reserved.
         </p>
       </footer>
-
     </div>
   );
 }
