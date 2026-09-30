@@ -1,142 +1,176 @@
-
-import './App.css'
+import { useEffect } from "react";
+import "./App.css";
+import { setupExperiment3 } from "./exp3";
 
 function App() {
+  useEffect(() => {
+    setupExperiment3();
+  }, []);
+
   return (
-    <div className="app">
-
-      {/* Navigation Bar */}
+    <div>
+      {/* HEADER */}
       <header className="header">
-        <nav className="navbar">
-          <div className="logo">Campus Connect</div>
+        <h2>Campus Connect</h2>
 
-          <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
+      {/* MAIN CONTENT */}
       <main>
-        {/* Home Section */}
+
+        {/* HERO SECTION */}
         <section className="hero" id="home">
-          <div className="hero-content">
-            <p className="subtitle">
-              YOUR CAMPUS, YOUR COMMUNITY
-            </p>
+          <p className="small-heading">
+            YOUR CAMPUS, YOUR COMMUNITY
+          </p>
 
-            <h1>Connect. Explore. Grow.</h1>
+          <h1>Connect. Explore. Grow.</h1>
 
-            <p className="hero-text">
-              Welcome to Campus Connect, your digital
-              campus community. Discover events, connect
-              with fellow students, and stay updated
-              with everything happening around you.
-            </p>
+          <p id="welcomeText">
+            Welcome to Campus Connect, your digital campus community.
+            Discover events, connect with fellow students, and stay
+            updated with everything happening around you.
+          </p>
 
-            <a href="#features" className="hero-button">
-              Explore Campus
-            </a>
-          </div>
+          <button
+            id="exploreButton"
+            className="primary-button"
+          >
+            Explore Campus
+          </button>
 
-          <div className="hero-image">
-            <img
-              src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80"
-              alt="University campus"
-            />
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80"
+            alt="University campus building"
+            className="campus-image"
+          />
         </section>
 
-        {/* Features Section */}
-        <section className="features-section" id="features">
-          <div className="section-heading">
-            <p className="subtitle">WHAT WE OFFER</p>
+        {/* FEATURES SECTION */}
+        <section className="features" id="features">
+          <p className="small-heading">
+            WHAT WE OFFER
+          </p>
 
-            <h2>Everything Campus, In One Place</h2>
+          <h2>Everything Campus, In One Place</h2>
 
-            <p>
-              Stay connected with your college through
-              events, student communities, and academic
-              resources.
-            </p>
-          </div>
+          <div className="card-container">
 
-          <div className="feature-cards">
-            <div className="feature-card">
-              <div className="card-number">01</div>
+            <article className="feature-card">
               <h3>Campus Events</h3>
-              <p>
-                Discover college festivals, workshops,
-                competitions, and upcoming campus events.
-              </p>
-            </div>
 
-            <div className="feature-card">
-              <div className="card-number">02</div>
+              <p>
+                Discover workshops, fests, clubs and activities
+                happening around campus.
+              </p>
+            </article>
+
+            <article className="feature-card">
               <h3>Student Community</h3>
-              <p>
-                Connect with fellow students, share
-                interests, and build meaningful friendships.
-              </p>
-            </div>
 
-            <div className="feature-card">
-              <div className="card-number">03</div>
+              <p>
+                Connect with students and build a strong
+                campus community.
+              </p>
+            </article>
+
+            <article className="feature-card">
               <h3>Academic Resources</h3>
+
               <p>
-                Find useful study materials, academic
-                updates, and resources in one place.
+                Find useful academic resources and stay updated
+                with important information.
               </p>
-            </div>
+            </article>
+
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="about-section" id="about">
-          <div className="about-content">
-            <p className="subtitle">ABOUT CAMPUS CONNECT</p>
+        {/* EXPERIMENT 3 INTERACTIVE SECTION */}
+        <section
+          className="interactive-section"
+          id="about"
+        >
+          <p className="small-heading">
+            INTERACTIVE CAMPUS
+          </p>
 
-            <h2>Making Campus Life Better</h2>
+          <h2>Campus Connect JavaScript</h2>
 
-            <p>
-              Campus Connect is a student-focused portal
-              designed to bring the college community
-              closer together.
+          <p>
+            This section demonstrates DOM manipulation,
+            events and dynamic content using JavaScript.
+          </p>
+
+          {/* TEXT INPUT */}
+          <div className="interaction-box">
+
+            <h3>1. Enter Your Name</h3>
+
+            <input
+              type="text"
+              id="studentName"
+              placeholder="Enter your name"
+            />
+
+            <p id="liveMessage">
+              Start typing your name...
             </p>
 
-            <p>
-              From discovering campus activities to
-              accessing useful academic information,
-              our goal is to make college life more
-              connected, engaging, and accessible.
-            </p>
           </div>
+
+          {/* KEYBOARD EVENT */}
+          <div className="interaction-box">
+
+            <h3>2. Add a Campus Announcement</h3>
+
+            <p>
+              Type an announcement and press
+              <strong> Enter</strong>.
+            </p>
+
+            <input
+              type="text"
+              id="announcementInput"
+              placeholder="Type an announcement..."
+            />
+
+            <div id="announcementList"></div>
+
+          </div>
+
         </section>
+
+        {/* CONTACT SECTION */}
+        <section
+          className="contact-section"
+          id="contact"
+        >
+          <h2>Stay Connected</h2>
+
+          <p>
+            Campus Connect helps students discover,
+            explore and participate in campus life.
+          </p>
+        </section>
+
       </main>
 
-      {/* Footer */}
-      <footer className="footer" id="contact">
-        <div>
-          <h3>Campus Connect</h3>
-          <p>Your campus. Your community.</p>
-        </div>
-
-        <div className="footer-contact">
-          <p>Have questions or suggestions?</p>
-          <a href="mailto:campusconnect@example.com">
-            Contact Us
-          </a>
-        </div>
-
-        <p className="copyright">
+      {/* FOOTER */}
+      <footer>
+        <p>
           © 2026 Campus Connect. All rights reserved.
         </p>
       </footer>
 
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

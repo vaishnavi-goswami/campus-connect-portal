@@ -1,0 +1,932 @@
+/* =========================================================
+   CAMPUS CONNECT PORTAL
+   Main stylesheet for App.jsx
+   ========================================================= */
+
+/* =========================
+   ROOT VARIABLES
+   ========================= */
+
+:root {
+  --primary-green: #0d5c3a;
+  --accent-green: #107c41;
+  --dark-green: #08452c;
+  --light-green: #eaf6ef;
+
+  --student-color: #2e7d32;
+  --faculty-color: #1565c0;
+  --admin-color: #6a1b9a;
+
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+  --text-dark: #1f2937;
+  --text-gray: #64748b;
+  --border-color: #e2e8f0;
+
+  --shadow-small: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 18px 40px rgba(0, 0, 0, 0.16);
+
+  --radius-small: 8px;
+  --radius-medium: 14px;
+  --radius-large: 20px;
+}
+
+
+/* =========================
+   GLOBAL RESET
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================
+   MAIN APP
+   ========================= */
+
+.app {
+  min-height: 100vh;
+  background: var(--white);
+}
+
+
+/* =========================
+   NAVIGATION BAR
+   ========================= */
+
+.navbar {
+  width: 100%;
+  min-height: 76px;
+  padding: 14px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: var(--shadow-small);
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-badge {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary-green);
+  color: var(--white);
+
+  border-radius: 12px;
+
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  box-shadow: var(--shadow-small);
+}
+
+.university-name {
+  color: var(--primary-green);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sub-dept {
+  color: var(--text-gray);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--primary-green);
+  color: var(--white);
+  border: 2px solid var(--primary-green);
+}
+
+.btn-primary:hover {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+}
+
+.btn-secondary:hover {
+  background: var(--light-green);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero-banner {
+  min-height: 520px;
+  padding: 90px 8%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13, 92, 58, 0.97),
+      rgba(16, 124, 65, 0.90)
+    );
+
+  color: var(--white);
+}
+
+.module-tag {
+  display: inline-block;
+
+  padding: 7px 14px;
+  margin-bottom: 18px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero-banner h1 {
+  max-width: 900px;
+
+  margin-bottom: 18px;
+
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.subtitle {
+  max-width: 720px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+
+  transition: all 0.25s ease;
+}
+
+.btn-hero-primary {
+  background: var(--white);
+  color: var(--primary-green);
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-hero-secondary {
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   GENERAL SECTION
+   ========================= */
+
+.section-container {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.section-title {
+  color: var(--text-dark);
+  text-align: center;
+
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 40px;
+
+  color: var(--text-gray);
+
+  text-align: center;
+  font-size: 16px;
+}
+
+.bg-light {
+  width: 100%;
+  max-width: none;
+
+  padding-left: 5%;
+  padding-right: 5%;
+
+  background: var(--bg-light);
+}
+
+
+/* =========================
+   HIGHLIGHTS GRID
+   ========================= */
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.highlight-card {
+  overflow: hidden;
+
+  background: var(--white);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-small);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-large);
+}
+
+.highlight-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+
+  color: var(--primary-green);
+
+  font-size: 21px;
+}
+
+.card-content p {
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+
+/* =========================
+   ROLE SECTION
+   ========================= */
+
+.roles-grid {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.role-card {
+  padding: 30px;
+
+  background: var(--white);
+
+  border-radius: var(--radius-medium);
+  border: 2px solid transparent;
+
+  box-shadow: var(--shadow-small);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-large);
+}
+
+.role-icon {
+  width: 55px;
+  height: 55px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--white);
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.role-card h3 {
+  margin-bottom: 10px;
+
+  font-size: 23px;
+}
+
+.role-card p {
+  margin-bottom: 20px;
+
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+.feature-bullets {
+  margin: 0 0 25px;
+  padding-left: 20px;
+
+  color: var(--text-gray);
+}
+
+.feature-bullets li {
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   ROLE COLORS
+   ========================= */
+
+.student-border {
+  border-color: var(--student-color);
+}
+
+.faculty-border {
+  border-color: var(--faculty-color);
+}
+
+.admin-border {
+  border-color: var(--admin-color);
+}
+
+.student-border .role-icon {
+  background: var(--student-color);
+}
+
+.faculty-border .role-icon {
+  background: var(--faculty-color);
+}
+
+.admin-border .role-icon {
+  background: var(--admin-color);
+}
+
+.student-bg {
+  background: var(--student-color);
+}
+
+.faculty-bg {
+  background: var(--faculty-color);
+}
+
+.admin-bg {
+  background: var(--admin-color);
+}
+
+
+/* =========================
+   PORTAL BUTTONS
+   ========================= */
+
+.btn-portal {
+  width: 100%;
+
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  color: var(--white);
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.btn-portal:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+/* =========================
+   INFORMATION SECTION
+   ========================= */
+
+.info-section {
+  padding: 20px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0fdf4,
+      #ffffff
+    );
+}
+
+.info-section .section-container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+
+/* =========================
+   INTERACTIVE SECTION
+   ========================= */
+
+.interactive-section {
+  padding: 80px 5%;
+
+  background: #f1f5f9;
+}
+
+.interactive-content {
+  width: min(850px, 100%);
+  margin: 0 auto;
+
+  padding: 40px;
+
+  background: var(--white);
+
+  border-radius: var(--radius-large);
+
+  box-shadow: var(--shadow-medium);
+}
+
+.interactive-content .module-tag {
+  background: var(--light-green);
+  color: var(--primary-green);
+  border: 1px solid #c7e8d3;
+}
+
+.interactive-content .section-title {
+  text-align: left;
+}
+
+.interactive-content .section-subtitle {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* =========================
+   INPUT GROUPS
+   ========================= */
+
+.input-group,
+.activity-group {
+  margin-top: 28px;
+}
+
+.input-group label,
+.activity-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-dark);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-group input,
+.activity-group input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  outline: none;
+
+  color: var(--text-dark);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.activity-group input:focus {
+  border-color: var(--accent-green);
+
+  box-shadow:
+    0 0 0 3px rgba(16, 124, 65, 0.12);
+}
+
+#nameOutput {
+  margin-top: 10px;
+
+  color: var(--primary-green);
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   INTERACTIVE BUTTON
+   ========================= */
+
+.interactive-button,
+.welcome-button {
+  margin-top: 12px;
+
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--primary-green);
+  color: var(--white);
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.interactive-button:hover,
+.welcome-button:hover {
+  background: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.welcome-button {
+  margin-top: 28px;
+}
+
+#welcomeMessage {
+  margin-top: 15px;
+
+  min-height: 25px;
+
+  color: var(--primary-green);
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   MESSAGE HIGHLIGHT
+   ========================= */
+
+.message-highlight {
+  display: inline-block;
+
+  padding: 10px 14px;
+
+  background: var(--light-green);
+
+  border-left: 4px solid var(--accent-green);
+
+  border-radius: 6px;
+}
+
+
+/* =========================
+   ACTIVITY LIST
+   ========================= */
+
+.activity-list-container {
+  margin-top: 35px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.activity-list-container h3 {
+  margin-bottom: 18px;
+
+  color: var(--text-dark);
+
+  font-size: 22px;
+}
+
+#activityList {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#activityList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 13px 15px;
+
+  background: var(--bg-light);
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+#activityList li span {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.remove-btn {
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #dc2626;
+  color: var(--white);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  padding: 35px 20px;
+
+  background: #0b3d2a;
+  color: rgba(255, 255, 255, 0.85);
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.footer p + p {
+  margin-top: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 14px 4%;
+  }
+
+  .hero-banner {
+    padding: 75px 6%;
+  }
+
+  .highlight-grid,
+  .roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-banner h1 {
+    font-size: 52px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   MOBILE
+   ========================= */
+
+@media (max-width: 650px) {
+  .navbar {
+    position: relative;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-actions {
+    width: 100%;
+  }
+
+  .nav-actions a {
+    flex: 1;
+  }
+
+  .hero-banner {
+    min-height: 480px;
+    padding: 60px 6%;
+  }
+
+  .hero-banner h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+  }
+
+  .section-container {
+    width: 88%;
+    padding: 60px 0;
+  }
+
+  .highlight-grid,
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-section {
+    padding: 60px 6%;
+  }
+
+  .interactive-content {
+    padding: 25px 20px;
+  }
+
+  #activityList li {
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================
+   EXTRA SMALL DEVICES
+   ========================= */
+
+@media (max-width: 400px) {
+  .brand-badge {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .university-name {
+    font-size: 15px;
+  }
+
+  .sub-dept {
+    font-size: 11px;
+  }
+
+  .hero-banner h1 {
+    font-size: 34px;
+  }
+
+  .interactive-content {
+    padding: 20px 15px;
+  }
+}
